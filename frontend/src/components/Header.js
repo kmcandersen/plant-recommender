@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <header>
       <Navbar expand='md' fixed='top' className='px-5 py-3'>
-        <Navbar.Brand href='/'>perennial candidates</Navbar.Brand>
+        <Navbar.Brand href='/'>
+          perennial candidates<i class='fab fa-envira pr-1'></i>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ml-auto'>

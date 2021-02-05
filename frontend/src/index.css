@@ -32,3 +32,8 @@ main {
   background-color: var(--light-gray);
   width: 100%;
 }
+
+.fa-envira {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
