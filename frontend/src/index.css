@@ -1,20 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=JetBrains+Mono:wght@500;800&family=Lato&display=swap');
 
 :root {
   --main-dark: #1f231f;
   --dark-green: #4f7d6a;
   --light-gray: #f8f9fa;
+  --burnt-orange: #e6631c;
+  --burnt-orange-dark: #bb6537;
 }
 
 body {
+  font-family: 'Lato', sans-serif;
+
+  color: var(--main-dark);
+}
+
+.navbar-brand,
+.nav-link,
+h2 {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  color: var(--main-dark);
+}
+
+h2 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 1.5rem;
 }
 
 main {
   margin-top: 72px;
   min-height: 80vh;
+}
+
+/* HEADER / NAV */
+
+.navbar {
+  background-color: white;
 }
 
 .navbar-light .navbar-brand,
@@ -36,4 +59,17 @@ main {
 .fa-envira {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+/* CARD */
+
+.card-title {
+  font-size: 1.2rem;
+  font-family: 'Della Respira', serif;
+  text-transform: uppercase;
+  color: var(--burnt-orange);
+}
+.card-title:hover {
+  color: var(--burnt-orange-dark);
+  text-decoration: underline;
 }

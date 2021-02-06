@@ -1,6 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import { Navbar, Nav } from 'react-bootstrap';
 import '../index.css';
 
 const Header = () => {
@@ -8,7 +7,7 @@ const Header = () => {
     <header>
       <Navbar expand='md' fixed='top' className='px-5 py-3'>
         <Navbar.Brand href='/'>
-          perennial candidates<i class='fab fa-envira pr-1'></i>
+          perennial candidates<i className='fab fa-envira pr-1'></i>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
