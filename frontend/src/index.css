@@ -1,5 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=JetBrains+Mono:wght@500;800&family=Lato&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=JetBrains+Mono:wght@500;800&family=Lato:ital@0;1&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=Lato&family=Merriweather:ital@1&display=swap');
 
 :root {
   --main-dark: #1f231f;
@@ -7,12 +8,11 @@
   --light-gray: #f8f9fa;
   --burnt-orange: #e6631c;
   --burnt-orange-dark: #bb6537;
+  --dark-brown: #844726;
 }
 
 body {
   font-family: 'Lato', sans-serif;
-
-  color: var(--main-dark);
 }
 
 .navbar-brand,
@@ -27,6 +27,11 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 1.5rem;
+}
+
+h2,
+.card-text {
+  color: var(--main-dark);
 }
 
 main {
@@ -64,12 +69,26 @@ main {
 /* CARD */
 
 .card-title {
-  font-size: 1.2rem;
-  font-family: 'Della Respira', serif;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
   color: var(--burnt-orange);
 }
 .card-title:hover {
   color: var(--burnt-orange-dark);
   text-decoration: underline;
+}
+
+.card-subtitle {
+  color: var(--dark-brown);
+  font-family: 'Merriweather', serif;
+}
+
+.card__body-reviews p {
+  margin-top: 2px;
+}
+
+.card__body-reviews img {
+  width: 16px;
+  height: 16px;
 }
