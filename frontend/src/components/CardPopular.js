@@ -1,11 +1,8 @@
 import React from 'react';
-import { createStarString } from '../utils/helpers.js';
 import { Card } from 'react-bootstrap';
-//renders HTML string in React
-import parse from 'html-react-parser';
+import Rating from './Rating';
 
 const CardPopular = ({ plant }) => {
-  let starString = createStarString(plant.rating);
   return (
     <Card className='rounded h-100'>
       <a href={`/plant/${plant._id}`}>
@@ -23,10 +20,7 @@ const CardPopular = ({ plant }) => {
         </a>
         <Card.Subtitle as='div'>{plant.scientificName}</Card.Subtitle>
         <Card.Text as='div'>
-          <div className='d-flex mt-3 card__body-reviews'>
-            <div>{parse(starString)}</div>{' '}
-            <p className='ml-2'>{plant.numReviews} reviews</p>
-          </div>
+          <Rating value={plant.rating} text={`${plant.numReviews} reviews`} />
         </Card.Text>
       </Card.Body>
     </Card>
