@@ -29,9 +29,9 @@ const createStarString = (origRating) => {
 const Rating = ({ value, text }) => {
   let starString = createStarString(value);
   return (
-    <div className='d-flex mt-3 card__body-reviews'>
+    <div className='mt-3 ratings__stars'>
       <div aria-label={`${value}-star rating`}>{parse(starString)}</div>
-      <p className='ml-2'>{text}</p>
+      <p>{text}</p>
     </div>
   );
 };

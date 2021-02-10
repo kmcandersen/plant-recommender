@@ -1,23 +1,29 @@
 /* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=JetBrains+Mono:wght@500;800&family=Lato:ital@0;1&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=Lato&family=Merriweather:ital@1&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=Lato&family=Merriweather:ital@1&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;800&family=Merriweather:ital@1&family=Montserrat:wght@400;500&display=swap');
 
 :root {
   --main-dark: #1f231f;
-  --dark-green: #4f7d6a;
+  --med-green: #1f9272;
+  --dark-green: #176f57;
   --light-gray: #f8f9fa;
   --burnt-orange: #e6631c;
   --burnt-orange-dark: #bb6537;
   --dark-brown: #844726;
+  --light-orange: #f9d582;
+  --light-blue: #b3d0fd;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .navbar-brand,
 .nav-link,
-h2 {
+h2,
+.btn {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
 }
@@ -37,6 +43,10 @@ h2,
 main {
   margin-top: 72px;
   min-height: 80vh;
+}
+
+.btn {
+  text-transform: uppercase;
 }
 
 /* HEADER / NAV */
@@ -72,10 +82,10 @@ main {
   font-size: 1.3rem;
   letter-spacing: 0.02em;
   text-transform: capitalize;
-  color: var(--burnt-orange);
+  color: var(--med-green);
 }
 .card-title:hover {
-  color: var(--burnt-orange-dark);
+  color: var(--dark-green);
   text-decoration: underline;
 }
 
@@ -84,11 +94,86 @@ main {
   font-family: 'Merriweather', serif;
 }
 
-.card__body-reviews p {
-  margin-top: 2px;
+.ratings__stars {
+  display: flex;
 }
-
-.card__body-reviews img {
+.ratings__stars p {
+  margin-top: 2px;
+  margin-left: 8px;
+}
+.ratings__stars img {
   width: 16px;
   height: 16px;
+}
+
+@media (min-width: 992px) and (max-width: 1040px) {
+  .ratings__stars {
+    display: block;
+  }
+  .ratings__stars p {
+    margin-left: 0;
+  }
+}
+
+/* PLANT DETAIL PAGE */
+.plant__title {
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--med-green);
+}
+
+.plant__subtitle {
+  color: var(--dark-brown);
+  font-family: 'Merriweather', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
+.plant__bloom {
+  text-transform: capitalize;
+}
+
+.plant__light,
+#plant__toggle-collection {
+  display: flex;
+  align-items: center;
+}
+
+.plant__light p,
+#plant__toggle-collection p {
+  margin: 0;
+}
+
+#plant__toggle-collection {
+  margin: 1.3rem 0 2.5rem;
+}
+#plant__toggle-collection button {
+  padding: 3px 0 0;
+  border: none;
+  background: none;
+}
+
+.fa-sun,
+.fa-cloud-sun,
+.fa-cloud,
+.fa-plus-circle {
+  font-size: 1.3rem;
+  margin-right: 6px;
+}
+
+.fa-sun {
+  color: var(--light-orange);
+}
+.fa-cloud-sun,
+.fa-cloud {
+  color: var(--light-blue);
+}
+
+.fa-plus-circle {
+  color: var(--dark-green);
+}
+.fa-plus-circle:hover {
+  color: var(--med-green);
 }
