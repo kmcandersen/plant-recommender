@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import CardPopular from '../components/CardPopular';
-import plants from '../plants.js';
 
 const HomeScreen = () => {
+  const [plants, setPlants] = useState([]);
+
+  useEffect(() => {
+    const fetchPlants = async () => {
+      const { data } = await axios.get('/api/plants');
+      setPlants(data);
+    };
+    fetchPlants();
+  }, []);
   return (
     <>
       <h2>Most Popular</h2>

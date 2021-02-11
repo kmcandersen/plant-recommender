@@ -8,7 +8,7 @@ const CardPopular = ({ plant }) => {
     <Card className='rounded h-100'>
       <Link to={`/plant/${plant._id}`}>
         <Card.Img
-          src={`/images/plants/${plant.image1.src}`}
+          src={`https://kristenandersen.online/plants/${plant.image1.src}`}
           variant='top'
           alt={`${plant.commonName} photo`}
         />
