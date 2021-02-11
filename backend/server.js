@@ -1,6 +1,6 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const plants = require('./data/plants');
+import express from 'express';
+import dotenv from 'dotenv';
+import plants from './data/plants.js';
 
 dotenv.config();
 

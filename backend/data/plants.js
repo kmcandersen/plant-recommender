@@ -191,4 +191,4 @@ const plants = [
   },
 ];
 
-module.exports = plants;
+export default plants;
