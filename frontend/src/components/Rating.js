@@ -1,36 +1,47 @@
 import React from 'react';
-import starYellow from '../img/stars/star-yellow.png';
-import starGray from '../img/stars/star-gray.png';
-import starHalf from '../img/stars/star-half.png';
-//renders HTML string in React
-import parse from 'html-react-parser';
-
-const createStarString = (origRating) => {
-  let roundedRating = Math.floor(origRating);
-  let isDecimal = origRating - roundedRating > 0;
-  let count = roundedRating;
-  let stars = '';
-
-  for (let i = 0; i < roundedRating; i++) {
-    stars += `<img src="${starYellow}" alt=''/>`;
-  }
-  if (isDecimal) {
-    stars += `<img src=${starHalf} alt=''/>`;
-    count++;
-  }
-  if (count < 5) {
-    for (let i = count; i < 5; i++) {
-      stars += `<img src=${starGray} alt=''/>`;
-    }
-  }
-  return stars;
-};
+import { ReactComponent as FullStar } from './stars/star-whole.svg';
+import { ReactComponent as HalfStar } from './stars/star-half.svg';
 
 const Rating = ({ value, text }) => {
-  let starString = createStarString(value);
+  const gray = '#959595';
+  const gold = '#fad817';
   return (
     <div className='mt-3 ratings__stars'>
-      <div aria-label={`${value}-star rating`}>{parse(starString)}</div>
+      {value >= 1 ? (
+        <FullStar style={{ fill: `${gold}` }} />
+      ) : value >= 0.5 ? (
+        <HalfStar />
+      ) : (
+        <FullStar style={{ fill: `${gray}` }} />
+      )}
+      {value >= 2 ? (
+        <FullStar style={{ fill: `${gold}` }} />
+      ) : value >= 1.5 ? (
+        <HalfStar />
+      ) : (
+        <FullStar style={{ fill: `${gray}` }} />
+      )}
+      {value >= 3 ? (
+        <FullStar style={{ fill: `${gold}` }} />
+      ) : value >= 2.5 ? (
+        <HalfStar />
+      ) : (
+        <FullStar style={{ fill: `${gray}` }} />
+      )}
+      {value >= 4 ? (
+        <FullStar style={{ fill: `${gold}` }} />
+      ) : value >= 3.5 ? (
+        <HalfStar />
+      ) : (
+        <FullStar style={{ fill: `${gray}` }} />
+      )}
+      {value === 5 ? (
+        <FullStar style={{ fill: `${gold}` }} />
+      ) : value >= 4.5 ? (
+        <HalfStar />
+      ) : (
+        <FullStar style={{ fill: `${gray}` }} />
+      )}
       <p>{text}</p>
     </div>
   );

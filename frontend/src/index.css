@@ -13,6 +13,9 @@
   --dark-brown: #844726;
   --light-orange: #f9d582;
   --light-blue: #b3d0fd;
+  /* star: */
+  --med-gray: rgb(149, 149, 149);
+  --yellow-color: rgb(250, 216, 23);
 }
 
 body {
@@ -97,13 +100,11 @@ main {
 .ratings__stars {
   display: flex;
 }
-.ratings__stars p {
+.ratings__stars svg {
   margin-top: 2px;
-  margin-left: 8px;
 }
-.ratings__stars img {
-  width: 16px;
-  height: 16px;
+.ratings__stars p {
+  margin-left: 8px;
 }
 
 @media (min-width: 992px) and (max-width: 1040px) {
