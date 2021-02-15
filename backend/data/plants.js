@@ -1,6 +1,5 @@
 const plants = [
   {
-    _id: '1',
     commonName: 'thinleaf sunflower',
     scientificName: 'helianthus decapetalus',
     image1: {
@@ -48,7 +47,6 @@ const plants = [
     numReviews: 3,
   },
   {
-    _id: '2',
     commonName: 'oriental poppy',
     scientificName: 'papaver orientale',
     image1: {
@@ -96,7 +94,6 @@ const plants = [
     numReviews: 2,
   },
   {
-    _id: '3',
     commonName: 'forget-me-not',
     scientificName: 'myosotis sylvatica',
     image1: {
@@ -144,7 +141,6 @@ const plants = [
     numReviews: 4,
   },
   {
-    _id: '4',
     commonName: 'foxglove',
     scientificName: 'digitalis purpurea',
     image1: {
