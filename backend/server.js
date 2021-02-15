@@ -2,7 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import colors from 'colors';
 import connectDB from './config/db.js';
-import plants from './data/plants.js';
+
+import plantRoutes from './routes/plantRoutes.js';
 
 dotenv.config();
 
@@ -10,14 +11,11 @@ connectDB();
 
 const app = express();
 
-app.get('/api/plants', (req, res) => {
-  res.json(plants);
+app.get('/', (req, res) => {
+  res.send('API is running...');
 });
 
-app.get('/api/plants/:id', (req, res) => {
-  const plant = plants.find((p) => p._id === req.params.id);
-  res.json(plant);
-});
+app.use('/api/plants/', plantRoutes);
 
 const PORT = process.env.PORT || 5000;
 
