@@ -16,21 +16,24 @@ const plantSchema = mongoose.Schema(
     // which Admin created plant item
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: [true, 'Plant must have a user name'],
       ref: 'User',
     },
     commonName: {
       type: String,
-      required: true,
+      required: [true, 'Plant must have a common name'],
       unique: true,
     },
     scientificName: {
       type: String,
-      required: true,
+      required: [true, 'Plant must have a scientific name'],
       unique: true,
     },
     image1: {
-      src: String,
+      src: {
+        type: String,
+        required: [true, 'Plant must have an image'],
+      },
       sourceUrl: String,
       credit: String,
       creditUrl: String,
@@ -70,12 +73,14 @@ const plantSchema = mongoose.Schema(
     reviews: [reviewSchema],
     rating: {
       type: Number,
-      required: true,
       default: 0,
     },
     numReviews: {
       type: Number,
-      required: true,
+      default: 0,
+    },
+    numCollections: {
+      type: Number,
       default: 0,
     },
   },

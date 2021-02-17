@@ -45,6 +45,7 @@ const plants = [
     },
     rating: 5,
     numReviews: 3,
+    numCollections: 0,
   },
   {
     commonName: 'oriental poppy',
@@ -92,6 +93,7 @@ const plants = [
     },
     rating: 4.5,
     numReviews: 2,
+    numCollections: 0,
   },
   {
     commonName: 'forget-me-not',
@@ -139,6 +141,7 @@ const plants = [
     },
     rating: 4,
     numReviews: 4,
+    numCollections: 0,
   },
   {
     commonName: 'foxglove',
@@ -184,6 +187,7 @@ const plants = [
     },
     rating: 4,
     numReviews: 4,
+    numCollections: 0,
   },
 ];
 

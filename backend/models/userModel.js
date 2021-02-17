@@ -4,23 +4,24 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, 'User must have a name'],
     },
     email: {
       type: String,
-      required: true,
+      required: [true, 'User must have an email address'],
       unique: true,
     },
     usdaZone: {
       type: Number,
     },
+    plantCollection: [mongoose.Schema.Types.ObjectId],
     password: {
       type: String,
-      required: true,
+      required: [true, 'User must have a password'],
     },
     isAdmin: {
       type: Boolean,
-      required: true,
+      required: [true, 'User account must include Admin indicator'],
       default: false,
     },
   },
