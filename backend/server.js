@@ -5,6 +5,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
 
 import plantRoutes from './routes/plantRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -12,11 +13,15 @@ connectDB();
 
 const app = express();
 
+// to accept json data in req body
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
-app.use('/api/plants/', plantRoutes);
+app.use('/api/plants', plantRoutes);
+app.use('/api/users', userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
