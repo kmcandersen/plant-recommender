@@ -5,13 +5,21 @@ import {
   plantListReducer,
   plantDetailsReducer,
 } from './reducers/plantReducers';
+import { userLoginReducer } from './reducers/userReducers';
 
 const reducer = combineReducers({
   plantList: plantListReducer,
   plantDetails: plantDetailsReducer,
+  userLogin: userLoginReducer,
 });
 
-const initialState = {};
+const userInfoFromStorage = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : null;
+
+const initialState = {
+  userLogin: { userInfo: userInfoFromStorage },
+};
 
 const middleware = [thunk];
 
