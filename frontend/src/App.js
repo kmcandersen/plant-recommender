@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import PlantScreen from './screens/PlantScreen';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <main className='px-5 py-3'>
         <Container>
           <Route path='/login' component={LoginScreen} />
+          <Route path='/register' component={RegisterScreen} />
           <Route path='/plant/:id' component={PlantScreen} />
           <Route path='/' component={HomeScreen} exact />
         </Container>
