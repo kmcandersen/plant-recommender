@@ -18,8 +18,8 @@ const LoginScreen = ({ location, history }) => {
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
-  // is user logged in
   useEffect(() => {
+    // is user logged in, can't access /login
     if (userInfo) {
       history.push(redirect);
     }
@@ -32,7 +32,7 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1>Log In</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -57,7 +57,7 @@ const LoginScreen = ({ location, history }) => {
         </Form.Group>
         <div className='my-4'>
           <Button className='btn btn-light' type='submit'>
-            Sign In
+            Log In
           </Button>
         </div>
       </Form>
